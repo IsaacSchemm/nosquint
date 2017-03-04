@@ -897,10 +897,10 @@ NoSquint.prefs = NoSquint.ns(function() { with(NoSquint) {
             /* Because this.checkVersionChange() is called during init of NSQ.browser,
              * and Application.extensions.get() is synchronous, defer this call.
              */
-            defer(0, function() callback(Application.extensions.get('nosquint@urandom.ca')));
+            defer(0, function() callback(Application.extensions.get('nosquint@lakora.us')));
         } else {
             Components.utils.import("resource://gre/modules/AddonManager.jsm");
-            AddonManager.getAddonByID('nosquint@urandom.ca', callback);
+            AddonManager.getAddonByID('nosquint@lakora.us', callback);
         }
     };
     return this;

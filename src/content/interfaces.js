@@ -214,7 +214,7 @@ NoSquint.interfaces = NoSquint.ns(function() { with (NoSquint) {
         },
 
         onDisabling: function(addon, needsRestart) {
-            if (addon.id != 'nosquint@urandom.ca' || NSQ.storage.disabled)
+            if (addon.id != 'nosquint@lakora.us' || NSQ.storage.disabled)
                 return;
 
             NSQ.storage.disabled = true;
@@ -229,7 +229,7 @@ NoSquint.interfaces = NoSquint.ns(function() { with (NoSquint) {
         },
 
         onOperationCancelled: function(addon) {
-            if (addon.id != 'nosquint@urandom.ca' || NSQ.storage.disabled != true)
+            if (addon.id != 'nosquint@lakora.us' || NSQ.storage.disabled != true)
                 return;
             NSQ.prefs.setSiteSpecific(false);
             NSQ.storage.disabled = false;

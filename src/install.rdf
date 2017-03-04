@@ -4,7 +4,7 @@
 
     <Description about="urn:mozilla:install-manifest">
 
-        <em:id>nosquint@urandom.ca</em:id>
+        <em:id>nosquint@lakora.us</em:id>
         <em:name>NoSquint for SeaMonkey</em:name>
         <em:version>2.1.11</em:version>
         <em:description>Fork of Jason Tackaberry's original NoSquint</em:description>
