@@ -15,6 +15,7 @@
 // ZoomManager._nosquintOrigZoomGetter = ZoomManager.__lookupGetter__('zoom');
 // ZoomManager._nosquintOrigZoomSetter = ZoomManager.__lookupSetter__('zoom');
 
+setTimeout(function () {
 ZoomManager.__defineSetter__('zoom', function(value) {
     var viewer = getBrowser().mCurrentBrowser.markupDocumentViewer;
     var updated = false;
@@ -62,3 +63,4 @@ FullZoom.enlarge = NoSquint.cmd.enlargeFullZoom;
 FullZoom.reduce = NoSquint.cmd.reduceFullZoom;
 FullZoom.reset = NoSquint.cmd.reset;
 */
+}, 2000);

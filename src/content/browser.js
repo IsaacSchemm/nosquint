@@ -73,8 +73,10 @@ NoSquint.browser = NoSquint.ns(function() { with (NoSquint) {
     /* Turns on the Addon Bar (Firefox 4)
      */
     this.enableAddonBar = function() {
-        var bar = $('status-bar');
-        setToolbarVisibility(bar, true);
+        if (document.getElementById('status-bar').hidden) {
+            goToggleToolbar('status-bar', 'cmd_viewtaskbar');
+            updateWindowState();
+        }
     };
 
     /* Checks whether the zoom buttons are added to any toolbar.  Returns a
@@ -146,7 +148,7 @@ NoSquint.browser = NoSquint.ns(function() { with (NoSquint) {
     /* Pops up the customize toolbar window.
      */
     this.customizeToolbar = function() {
-        return BrowserCustomizeToolbar();
+        return goCustomizeToolbar(document.getElementById('toolbar-menubar').toolbox);
     };
 
 
@@ -205,7 +207,7 @@ NoSquint.browser = NoSquint.ns(function() { with (NoSquint) {
      * Global prefs.
      */
     this.updateZoomMenu = function() {
-        var popup = $('viewFullZoomMenu').childNodes[0];
+        var popup = $('menu_zoom').childNodes[0];
         var full_zoom_primary = NSQ.prefs.fullZoomPrimary;
 
         if (!$('nosquint-view-menu-settings')) {
@@ -213,11 +215,11 @@ NoSquint.browser = NoSquint.ns(function() { with (NoSquint) {
                 if (child.id == 'toggle_zoom')
                     child.hidden = true;
                 if (child.nodeName != 'menuitem' || child.command === undefined ||
-                    (child.command != 'cmd_fullZoomEnlarge' && child.command != 'cmd_fullZoomReduce'))
+                    (child.command != 'cmd_zoomEnlarge' && child.command != 'cmd_zoomReduce'))
                     continue;
 
                 var icon = document.defaultView.getComputedStyle(child, null).getPropertyValue('list-style-image');
-                var enlarge = child.command == 'cmd_fullZoomEnlarge';
+                var enlarge = child.command == 'cmd_zoomEnlarge';
                 var item = document.createElement('menuitem');
                 var suffix = "noSquint" + (enlarge ? "Enlarge" : "Reduce") + "Secondary";
                 item.setAttribute("command",  "cmd_" + suffix);
@@ -237,11 +239,11 @@ NoSquint.browser = NoSquint.ns(function() { with (NoSquint) {
             if (child.nodeName != 'menuitem')
                 continue;
             var command = child.getAttribute('command');
-            if (command == "cmd_fullZoomEnlarge")
+            if (command == "cmd_zoomEnlarge")
                 child.setAttribute('label', NSQ.strings['zoomMenuIn' + (full_zoom_primary ? "Full" : "Text")]);
             else if (command == "cmd_noSquintEnlargeSecondary")
                 child.setAttribute('label', NSQ.strings['zoomMenuIn' + (full_zoom_primary ? "Text" : "Full")]);
-            if (command == "cmd_fullZoomReduce")
+            if (command == "cmd_zoomReduce")
                 child.setAttribute('label', NSQ.strings['zoomMenuOut' + (full_zoom_primary ? "Full" : "Text")]);
             else if (command == "cmd_noSquintReduceSecondary")
                 child.setAttribute('label', NSQ.strings['zoomMenuOut' + (full_zoom_primary ? "Text" : "Full")]);
