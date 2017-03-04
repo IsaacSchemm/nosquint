@@ -1,5 +1,8 @@
-# NoSquint is no longer mantained :(
-Please see [the NoSquint website](https://www.urandom.ca/nosquint/) for more information.
+# NoSquint for SeaMonkey
 
-# NoSquint is public domain :)
-All are welcome to do whatever they want with the code in this repository.  Go forth and make the add-on ecosystem excellent.
+This project is in the public domain; original NoSquint site at: https://urandom.ca/nosquint/archive.php
+
+Tested and mostly working with SeaMonkey 2.46. See the [Releases](https://github.com/IsaacSchemm/nosquint/releases) page for an .xpi extension file.
+
+Known bugs:
+* NoSquint does not appear in the status bar like it should

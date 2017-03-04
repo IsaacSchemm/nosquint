@@ -5,12 +5,13 @@
     <Description about="urn:mozilla:install-manifest">
 
         <em:id>nosquint@urandom.ca</em:id>
-        <em:name>NoSquint</em:name>
-        <em:version>2.1.9</em:version>
-        <em:description>Manage site-specific zoom levels and color settings</em:description>
-        <em:creator>Jason Tackaberry</em:creator>
+        <em:name>NoSquint for SeaMonkey</em:name>
+        <em:version>2.1.11</em:version>
+        <em:description>Fork of Jason Tackaberry's original NoSquint</em:description>
+        <em:creator>Isaac Schemm</em:creator>
+        <em:contributor>Jason Tackaberry</em:contributor>
         <!-- optional items -->
-        <em:homepageURL>http://urandom.ca/nosquint/</em:homepageURL>
+        <em:homepageURL>https://github.com/IsaacSchemm/nosquint</em:homepageURL>
         <em:optionsURL>chrome://nosquint/content/dlg-global.xul</em:optionsURL>
         <em:type>2</em:type> <!-- type=extension -->
 
