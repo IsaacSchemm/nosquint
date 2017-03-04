@@ -1,4 +1,4 @@
-// chrome://browser/content/browser.xul
+// chrome://navigator/content/navigator.xul
 
 /******************************************************************************
  * Browser
@@ -73,7 +73,7 @@ NoSquint.browser = NoSquint.ns(function() { with (NoSquint) {
     /* Turns on the Addon Bar (Firefox 4)
      */
     this.enableAddonBar = function() {
-        var bar = $('addon-bar');
+        var bar = $('status-bar');
         setToolbarVisibility(bar, true);
     };
 

@@ -22,22 +22,22 @@
     }
 
     this.is30 = (function() {
-        let is30 = Application.version.substr(0, 4) == '3.0.';
+        let is30 = Components.classes["@mozilla.org/xre/app-info;1"].getService(Components.interfaces.nsIXULAppInfo).platformVersion.substr(0, 4) == '3.0.';
         return function() is30;
     })();
 
     this.is36 = (function() {
-        let is36 = Application.version.substr(0, 4) == '3.6.';
+        let is36 = Components.classes["@mozilla.org/xre/app-info;1"].getService(Components.interfaces.nsIXULAppInfo).platformVersion.substr(0, 4) == '3.6.';
         return function() is36;
     })();
 
     this.is3x = (function() {
-        let is3x = parseInt(Application.version.split('.')[0]) < 4;
+        let is3x = parseInt(Components.classes["@mozilla.org/xre/app-info;1"].getService(Components.interfaces.nsIXULAppInfo).platformVersion.split('.')[0]) < 4;
         return function() is3x;
     })();
 
     this.is40 = (function() {
-        let is40 = parseInt(Application.version.split('.')[0]) >= 4;
+        parseInt(Components.classes["@mozilla.org/xre/app-info;1"].getService(Components.interfaces.nsIXULAppInfo).platformVersion.split('.')[0]) >= 4;
         return function() is40;
     })();
 

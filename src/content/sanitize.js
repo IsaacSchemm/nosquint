@@ -1,5 +1,5 @@
-// chrome://browser/content/sanitize.xul 
-// chrome://browser/content/preferences/sanitize.xul 
+// chrome://navigator/content/sanitize.xul
+// chrome://communicator/content/sanitize.xul 
 
 NoSquint.sanitizer = NoSquint.ns(function() { with (NoSquint) {
     this.init = function() {

@@ -1,4 +1,4 @@
-// chrome://browser/content/browser.xul
+// chrome://navigator/content/navigator.xul
 
 /******************************************************************************
  * Preferences
